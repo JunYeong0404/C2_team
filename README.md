@@ -1,5 +1,5 @@
 # C2_team
-1.
+
 ##  1) test.c
 #include<stdio.h>  
 int add(int a, int b);  
