@@ -21,66 +21,63 @@
   
    if(dir==0){
    
-    if(pivot<v[r] ) r--;
+  if(pivot<v[r] ) r--;
     
-    else{
+  else{
     
-     v[pi]=v[r];
+  v[pi]=v[r];
      
-     pi = r;
-     
-     if(l!=r) l++;
-     
-     dir=1;
-     
-    }
+  pi = r;
     
-   }
-   
-   if(dir==1){
-   
-    if(pivot>v[l]) l++;
-    
-    else{
-    
-     v[pi]=v[l];
+ if(l!=r) l++;
      
-     pi = l;
+ dir=1;
      
-     if(l!=r) r--;
-     
-     dir=0;
-     
-    }  
-    
-   }
-   
   }
-  
-  v[r] = pivot;
-  
-  qs(v,left,r-1);
-  
-  qs(v,r+1,right);
+    
+  }
+   
+  if(dir==1){
+   
+  if(pivot>v[l]) l++;
+    
+  else{
+    
+  v[pi]=v[l];
+      pi = l;
+     
+if(l!=r) r--;
+     
+ dir=0;
+     
+ }  
+     }
   
  }
+  
+v[r] = pivot;
+  
+qs(v,left,r-1);
+  
+qs(v,r+1,right);
+  
+}
  
- return;
+return;
  
  
 }
 
 void main(){
 
- int i;
+int i;
  
- int v[LEN]={8,17,6,5,-44,3,2,1};
+int v[LEN]={8,17,6,5,-44,3,2,1};
  
- for(i=0;i<LEN;i++) printf(" %d", v[i]); printf("\n");
+for(i=0;i<LEN;i++) printf(" %d", v[i]); printf("\n");
  
- 
- qs(v,0,LEN-1);
- 
- for(i=0;i<LEN;i++) printf(" %d", v[i]); printf("\n");
+qs(v,0,LEN-1);
+
+for(i=0;i<LEN;i++) printf(" %d", v[i]); printf("\n");
  
 }
